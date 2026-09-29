@@ -1,0 +1,168 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #fafafa;
+  color: #262626;
+  padding-top: 60px;
+}
+
+/* Topbar */
+.topbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 60px;
+  background: #fff;
+  border-bottom: 1px solid #dbdbdb;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 100;
+}
+.topbar h1 { font-size: 22px; font-family: 'Segoe UI', cursive; }
+.controls { display: flex; gap: 10px; }
+.controls select, .controls button {
+  padding: 8px 14px;
+  border: 1px solid #dbdbdb;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 14px;
+}
+.controls button { background: #0095f6; color: #fff; border: none; font-weight: 600; }
+
+/* Feed */
+.feed {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+/* Post estilo Instagram */
+.post {
+  background: #fff;
+  border: 1px solid #dbdbdb;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  gap: 12px;
+}
+
+.post-avatar {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.post-source { font-weight: 600; font-size: 14px; }
+.post-date { font-size: 12px; color: #8e8e8e; }
+
+.post-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: #efefef;
+  object-fit: cover;
+  display: block;
+}
+
+.post-caption {
+  padding: 14px 16px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.post-caption .source-name {
+  font-weight: 600;
+  margin-right: 6px;
+}
+.post-caption a { color: #00376b; text-decoration: none; }
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 200;
+  align-items: center;
+  justify-content: center;
+}
+.modal.active { display: flex; }
+
+.modal-content {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  width: 90%;
+  max-width: 460px;
+  max-height: 85vh;
+  overflow-y: auto;
+}
+.modal-content h2 { margin-bottom: 16px; }
+
+.add-feed { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
+.add-feed input {
+  padding: 10px;
+  border: 1px solid #dbdbdb;
+  border-radius: 6px;
+  font-size: 14px;
+}
+.add-feed button {
+  padding: 10px;
+  background: #0095f6;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#feedsList { list-style: none; margin-bottom: 16px; }
+#feedsList li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #efefef;
+  font-size: 14px;
+}
+#feedsList button {
+  background: #ff3040;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.close-btn {
+  width: 100%;
+  padding: 12px;
+  background: #efefef;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.loader {
+  text-align: center;
+  padding: 20px;
+  color: #8e8e8e;
+  display: none;
+}
+.loader.active { display: block; }
