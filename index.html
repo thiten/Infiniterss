@@ -1,0 +1,41 @@
+ <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RSSGram - Feed Infinito</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>📸 RSSGram</h1>
+    <div class="controls">
+      <select id="orderMode">
+        <option value="date">📅 Por data</option>
+        <option value="random">🎲 Aleatório</option>
+      </select>
+      <button id="settingsBtn">⚙️ Feeds</button>
+    </div>
+  </header>
+
+  <!-- Modal de gerenciamento de feeds -->
+  <div class="modal" id="feedsModal">
+    <div class="modal-content">
+      <h2>Gerenciar Feeds</h2>
+      <div class="add-feed">
+        <input type="text" id="feedName" placeholder="Nome do site (ex: G1)">
+        <input type="url" id="feedUrl" placeholder="URL do feed RSS">
+        <button id="addFeedBtn">Adicionar</button>
+      </div>
+      <ul id="feedsList"></ul>
+      <button id="closeModalBtn" class="close-btn">Fechar</button>
+    </div>
+  </div>
+
+  <!-- Feed -->
+  <main id="feed" class="feed"></main>
+  <div id="loader" class="loader">Carregando...</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
